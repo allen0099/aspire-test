@@ -43,4 +43,5 @@ services.AddKeycloakWebApiAuthentication(
 
 ## Known Issues
 
-1. Keycloak container takes about 1 minute to start. In order to use Swagger UI, please reload the page once Keycloak is ready to load `OpenApiSecurityScheme` from discovery endpoint.
+1. Keycloak container takes about 1 minute to start. In order to use Swagger UI, please reload the page once Keycloak is
+   ready to load `OpenApiSecurityScheme` from discovery endpoint.
