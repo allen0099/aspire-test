@@ -1,32 +1,43 @@
-﻿using Api;
-using Keycloak.AuthServices.Authentication;
+﻿using Keycloak.AuthServices.Authentication;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
 
 builder.AddServiceDefaults();
-services.AddApplicationOpenApi(configuration);
+
+// Add services to the container.
+services.AddControllers();
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+services.AddOpenApi();
+services.AddEndpointsApiExplorer();
+services.AddAuthorization();
 
 services.AddKeycloakWebApiAuthentication(
     configuration,
     options =>
     {
-        options.Audience = "workspaces-client";
         options.RequireHttpsMetadata = false;
     }
 );
-services.AddAuthorization();
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+    app.MapScalarApiReference();
+}
 
-app.UseApplicationOpenApi();
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapGet("/hello", () => "Hello World!").RequireAuthorization();
 
-app.Run();
+app.MapControllers();
+
+await app.RunAsync();

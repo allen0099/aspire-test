@@ -10,11 +10,16 @@
     <ItemGroup>
         <PackageReference Include="Aspire.Hosting"/>
         <PackageReference Include="Aspire.Hosting.AppHost"/>
+        <PackageReference Include="Aspire.Hosting.Valkey"/>
         <PackageReference Include="Keycloak.AuthServices.Aspire.Hosting"/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\Api\Api.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Keycloak\Providers\"/>
     </ItemGroup>
 
 </Project>

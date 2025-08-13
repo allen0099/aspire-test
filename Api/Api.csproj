@@ -5,14 +5,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Keycloak.AuthServices.Authentication"/>
-        <PackageReference Include="Keycloak.AuthServices.Common"/>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi"/>
-        <PackageReference Include="Swashbuckle.AspNetCore"/>
+        <PackageReference Include="Keycloak.AuthServices.Authentication" />
+        <PackageReference Include="Keycloak.AuthServices.Common" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+        <PackageReference Include="Scalar.AspNetCore" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj"/>
+        <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj" />
     </ItemGroup>
 
 </Project>
