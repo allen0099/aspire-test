@@ -1,7 +1,5 @@
 ﻿var builder = DistributedApplication.CreateBuilder(args);
 
-var cache = builder.AddValkey("cache");
-
 var keycloak = builder
     .AddKeycloakContainer("keycloak")
     // .WithBindMount("./Keycloak/Themes","/opt/keycloak/themes")
@@ -16,7 +14,6 @@ var realm = keycloak.AddRealm("Test");
 builder.AddProject<Projects.Api>("api")
     .WithReference(keycloak)
     .WaitFor(keycloak)
-    .WithReference(realm)
-    .WithReference(cache);
+    .WithReference(realm);
 
 builder.Build().Run();

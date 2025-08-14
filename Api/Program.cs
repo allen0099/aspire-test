@@ -47,6 +47,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.MapScalarApiReference(options =>
     {
+        options.WithTheme(ScalarTheme.Purple);
         options.WithDarkMode(false);
         options.AddPreferredSecuritySchemes("keycloak-password")
             .AddPasswordFlow("keycloak-password", flow =>
