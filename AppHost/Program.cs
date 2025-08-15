@@ -13,10 +13,14 @@ var realm = keycloak.AddRealm("Test");
 
 var sql = builder.AddSqlServer("sql");
 
-builder.AddProject<Projects.Api>("api")
+var api = builder.AddProject<Projects.Api>("api")
     .WithReference(keycloak)
     .WaitFor(keycloak)
     .WithReference(realm)
     .WithReference(sql);
+
+builder.AddNpmApp("webapp", "../WebApp", "dev")
+    .WithReference(api)
+    .WithHttpEndpoint(5170, targetPort: 5173);
 
 builder.Build().Run();
