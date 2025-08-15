@@ -21,6 +21,6 @@ var api = builder.AddProject<Projects.Api>("api")
 
 builder.AddNpmApp("webapp", "../WebApp", "dev")
     .WithReference(api)
-    .WithHttpEndpoint(5170, targetPort: 5173);
+    .WithHttpEndpoint(port: 5170, targetPort: 5173);
 
 builder.Build().Run();
