@@ -5,6 +5,7 @@ using Scalar.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using System.Collections.Concurrent;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -29,6 +30,13 @@ services.AddKeycloakWebApiAuthentication(
 services.AddAuthorization();
 
 var app = builder.Build();
+
+// Apply migrations on startup
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    await dbContext.Database.MigrateAsync();
+}
 
 // 收集所有有 [Authorize] 的 endpoint
 var endpointDataSource = app.Services.GetRequiredService<EndpointDataSource>();

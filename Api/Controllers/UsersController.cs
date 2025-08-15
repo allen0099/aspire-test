@@ -91,4 +91,15 @@ public class UsersController : ControllerBase
 
         return NoContent();
     }
+    
+    // GET: api/users/test
+    [HttpGet("test")]
+    public async Task<ActionResult<User>> TestDatabaseConnection()
+    {
+        var guid = Guid.NewGuid();
+        var user = new User { Name = $"Test User {guid}", Email = $"testuser@{guid}.com" };
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
+        return user;
+    }
 }

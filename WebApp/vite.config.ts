@@ -9,5 +9,12 @@ export default defineConfig({
     server: {
         port: 5173,
         strictPort: true,
+        proxy: {
+            '/api': {
+                target: process.env.services__api__http__0,
+                changeOrigin: true,
+                secure: false,
+            }
+        }
     }
 });
