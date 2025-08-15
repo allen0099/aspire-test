@@ -1,4 +1,5 @@
 ﻿using Api;
+using Database;
 using Keycloak.AuthServices.Authentication;
 using Scalar.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
@@ -10,6 +11,8 @@ var services = builder.Services;
 var configuration = builder.Configuration;
 
 builder.AddServiceDefaults();
+
+builder.AddSqlServerDbContext<ApplicationDbContext>("sql");
 
 // Add services to the container.
 services.AddControllers();

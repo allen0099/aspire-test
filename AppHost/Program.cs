@@ -11,9 +11,12 @@ var keycloak = builder
 
 var realm = keycloak.AddRealm("Test");
 
+var sql = builder.AddSqlServer("sql");
+
 builder.AddProject<Projects.Api>("api")
     .WithReference(keycloak)
     .WaitFor(keycloak)
-    .WithReference(realm);
+    .WithReference(realm)
+    .WithReference(sql);
 
 builder.Build().Run();

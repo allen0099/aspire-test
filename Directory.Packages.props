@@ -1,22 +1,29 @@
 ﻿<Project>
-    <ItemGroup>
-        <PackageVersion Include="Aspire.Hosting.AppHost" Version="9.4.1"/>
-        <PackageVersion Include="Aspire.Hosting" Version="9.4.1"/>
-        <PackageVersion Include="Aspire.Hosting.Keycloak" Version="9.4.1-preview.1.25408.4"/>
-        <PackageVersion Include="Aspire.Hosting.Valkey" Version="9.4.1"/>
-        <PackageVersion Include="Keycloak.AuthServices.Aspire.Hosting" Version="0.1.0-preview1"/>
-        <PackageVersion Include="Keycloak.AuthServices.Authentication" Version="2.6.1"/>
-        <PackageVersion Include="Keycloak.AuthServices.Common" Version="2.6.1"/>
-        <PackageVersion Include="Keycloak.AuthServices.OpenTelemetry" Version="1.0.0"/>
-        <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.8"/>
-        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.0.0"/>
-        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="9.0.0"/>
-        <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.12.0"/>
-        <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.12.0"/>
-        <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.12.0"/>
-        <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0"/>
-        <PackageVersion Include="OpenTelemetry.Instrumentation.Process" Version="1.12.0-beta.1"/>
-        <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0"/>
-        <PackageVersion Include="Scalar.AspNetCore" Version="2.6.9"/>
-    </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="9.4.1" />
+    <PackageVersion Include="Aspire.Hosting" Version="9.4.1" />
+    <PackageVersion Include="Aspire.Hosting.Keycloak" Version="9.4.1-preview.1.25408.4" />
+    <PackageVersion Include="Aspire.Hosting.SqlServer" Version="9.4.1" />
+    <PackageVersion Include="Aspire.Hosting.Valkey" Version="9.4.1" />
+    <PackageVersion Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="9.4.1" />
+    <PackageVersion Include="Keycloak.AuthServices.Aspire.Hosting" Version="0.1.0-preview1" />
+    <PackageVersion Include="Keycloak.AuthServices.Authentication" Version="2.6.1" />
+    <PackageVersion Include="Keycloak.AuthServices.Common" Version="2.6.1" />
+    <PackageVersion Include="Keycloak.AuthServices.OpenTelemetry" Version="1.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageVersion>
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="9.0.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.12.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.12.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.12.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Process" Version="1.12.0-beta.1" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.6.9" />
+  </ItemGroup>
 </Project>
